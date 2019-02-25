@@ -233,7 +233,7 @@ def main():
     
     
     with Board() as board:
-        tts_answer("Please  proceed.")
+        tts_answer("지금부터 말해 주세요. ")
         while True:
 
             try:
