@@ -100,7 +100,7 @@ def calendar(date,summary):
     e['start']['dateTime'], e['end']['dateTime'] ))
     
    
-    speech = start_date[0:-4] +' 에서 ' + end_date[0:-4] +" 까지 " + summary + '(로) 예약되었습니다.'   
+    speech = start_date[5:-4] +' 에서 ' + end_date[5:-4] +" 까지 " + summary + '(로) 예약되었습니다.'   
     
     return speech 
 
