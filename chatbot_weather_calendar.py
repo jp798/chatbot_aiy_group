@@ -100,7 +100,7 @@ def calendar(date,summary):
     e['start']['dateTime'], e['end']['dateTime'] ))
     
    
-    speech = start_date +' 에서 ' + end_date +" 까지 " + summary + '(로) 예약되었습니다.'   
+    speech = start_date[0:-4] +' 에서 ' + end_date[0:-4] +" 까지 " + summary + '(로) 예약되었습니다.'   
     
     return speech 
 
@@ -178,7 +178,7 @@ def tts_answer(answer):
 
     # Set the text input to be synthesize
     synthesis_input = texttospeech.types.SynthesisInput(text = answer)
-    count = len(str(synthesis_input))/60 ### 시간 딜레이 
+    count = len(str(synthesis_input))/50 ### 시간 딜레이 
     print ("count" + str(count))
 
 
@@ -251,7 +251,7 @@ def main():
             text = client.recognize(language_code=args.language,
                                     hint_phrases=hints)
             if text is None :
-                tts_answer('You are not say anything...". ㅠㅠㅠㅠ ')
+                tts_answer('아무 말로 없네요.  ㅠㅠㅠㅠ ')
                 print('Sorry, I did not hear you.')
 
             else :
