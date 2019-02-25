@@ -51,7 +51,7 @@ def get_answer(text, user_key):
         'lang': 'ko',          # 한글 설정 
     }
     data_header = {
-        'Authorization': 'Bearer a4d9f1fb586c4fc1a70e58781425ab68',
+        'Authorization': 'Bearer 56b4c79017514fb6a27a45ce43bc21a3',
         'Content-Type': 'application/json; charset=utf-8'
     }
     dialogflow_url = 'https://api.dialogflow.com/v1/query?v=20150910'
