@@ -178,12 +178,12 @@ def tts_answer(answer):
 
     # Set the text input to be synthesize
     synthesis_input = texttospeech.types.SynthesisInput(text = answer)
-    count = len(str(synthesis_input))/15 ### 시간 딜레이 
+    count = len(str(synthesis_input))/60 ### 시간 딜레이 
     print ("count" + str(count))
 
 
     voice = texttospeech.types.VoiceSelectionParams(
-            language_code='en-US',   ### ko-KR
+            language_code='ko-KR',   ### ko-KR
             ssml_gender=texttospeech.enums.SsmlVoiceGender.NEUTRAL)
 
     # Select the type of audio file you want returned
