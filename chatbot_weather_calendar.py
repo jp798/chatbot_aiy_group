@@ -248,6 +248,10 @@ def main():
             except :
                print ("error")
 
+            board.led.state = Led.BLINK 
+            board.button.wait_for_press()
+            board.led.state = Led.ON 
+
             text = client.recognize(language_code=args.language,
                                     hint_phrases=hints)
             if text is None :
