@@ -19,7 +19,7 @@ def get_answer(text, user_key):
 
     data_header = {
 
-        'Authorization': 'Bearer 56b4c79017514fb6a27a45ce43bc21a3',
+        'Authorization': 'Bearer 56b4c79017514fb6a27a45ce43bc21a3',  ## dialogflow jjangphal
         'Content-Type': 'application/json; charset=utf-8'
     }
 
