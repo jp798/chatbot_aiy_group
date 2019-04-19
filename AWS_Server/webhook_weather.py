@@ -22,7 +22,7 @@ def webhook() :
 def makeResponse(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    city = parameters.get("city")
+    city = parameters.get("local-city")
    #date = parameters.get("date")
     print("######## "+city +"#################")
 

@@ -51,7 +51,7 @@ def webhook() :
          res = calendar(parameters.get("date-time"),parameters.get("summary"))
 
     elif  action =="weather"  :
-         res = weather(parameters.get("city"))
+         res = weather(parameters.get("local-city"))
 
     else    :
          res = {  "speech" : "죄송해요. 답변해 드릴수가 없네요." ,
