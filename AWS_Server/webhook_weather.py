@@ -34,6 +34,7 @@ def makeResponse(req):
 
     condition = json_object["weather"][0]["description"]  # 날씨 condition 
     temp = int(json_object["main"]["temp"]) -32 #섭씨 온도 변환 
+    temp = int(temp*5/9)
     humidity  =  json_object["main"]["humidity"] # 현재 습도 변환 
 
     speech ="현재 " + city  + " 날씨는 " + condition + "입니다.  온도는 " + str(temp) +"C이며 습도는 " +str(humidity)+ "%입니다. " 
