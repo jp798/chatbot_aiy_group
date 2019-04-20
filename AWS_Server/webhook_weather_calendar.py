@@ -118,8 +118,9 @@ def weather(city) :
 
 
     ######  날짜정보를 가지고 오기... Json 형태로 파싱하여 보여주기 ###### 
-    condition = json_object["weather"][0]["description"]
-    temp = int(json_object["main"]["temp"]) -32
+    condition = json_object["weather"][0]["description"] #날씨 표현 
+    temp = int(json_object["main"]["temp"]) -32  #섭씨 온도 변환 
+    temp = int(temp*5/9)  #섭씨 온도 변환
     humidity  =  json_object["main"]["humidity"]
 
     #####  문자열로 가지고 오기  
