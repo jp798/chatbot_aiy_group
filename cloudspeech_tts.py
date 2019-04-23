@@ -33,16 +33,16 @@ def tts_answer(answer):
 
     # Set the text input to be synthesize
     synthesis_input = texttospeech.types.SynthesisInput(text = answer)
-    count = len(str(synthesis_input))/70
+    count = len(str(synthesis_input))/70  ## 말하는 시간동안 기다리는 딜레이 
     print ("count" + str(count))
 
 
     voice = texttospeech.types.VoiceSelectionParams(
-            language_code='ko-KR',
+            language_code='ko-KR',  ## 한국어 
             ssml_gender=texttospeech.enums.SsmlVoiceGender.NEUTRAL)
 
     # Select the type of audio file you want returned
-    audio_config = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.AudioEncoding.MP3)
+    audio_config = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.AudioEncoding.MP3)  ##MP3 저장 
 
     # Perform the text-to-speech request on the text input with the selected
     # voice parameters and audio file type
@@ -58,7 +58,7 @@ def tts_answer(answer):
     mixer.init()
     mixer.music.load('output.mp3')
     mixer.music.play(0)
-    time.sleep(count)
+    time.sleep(count)  ### 기다리는 시간
 
     print ("SOUND GOOD~~")
 
@@ -85,7 +85,7 @@ def main():
     logging.info('Initializing for language %s...', args.language)
     hints = get_hints(args.language)
     client = CloudSpeechClient()
-    tts_answer("지금부터 말해 주세요.")
+    tts_answer("지금부터 말해 주세요.")   ### tts 적용
     
     with Board() as board:
         while True:
@@ -100,9 +100,9 @@ def main():
                 logging.info('아무말도 없네요. .')
                 tts_answer('아무 말도 없네요. ㅠㅠㅠㅠ')
             
-            else :
+            else :   ### STT 적용될 경우에.. 
                 logging.info('You said: "%s"' % text)
-                tts_answer(text)
+                tts_answer(text)   ### TTS 적용 
 
 
 if __name__ == '__main__':

@@ -42,7 +42,7 @@ conn = pymysql.connect(host='127.0.0.1',user='pi',password='1234',charset='utf8m
 client = texttospeech.TextToSpeechClient()
 
 
-def get_answer(text, user_key):
+def get_answer(text, user_key):   ### dialogflow
 
     print("get_answer... start")
     data_send = { 
@@ -130,7 +130,7 @@ def main():
        while True:
 
             try:
-                with conn.cursor() as cursor:
+                with conn.cursor() as cursor:   ### 현재 진행되었던 대화 내용 조회해서 보여주기
 
                     cursor.execute("SELECT * FROM aiy.chat ORDER BY id DESC LIMIT 16;")
                     result = cursor.fetchall()
@@ -163,7 +163,7 @@ def main():
                     print("DB1 에러")
             #conn.close()
 
-            #### 답변에 대한 출력 
+            #### 답변에 대한 출력  및 DB 저장 
             
                 text = get_answer(text,'jp')
                 print('챗봇:"', text, '"')
